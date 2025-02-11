@@ -3,6 +3,8 @@
 
 ---
 
+https://www.youtube.com/watch?v=KNyG5AwlKGE
+
 ### Paradygmaty programowania – co to jest?
 
 **Paradygmat programowania** to styl lub sposób pisania programów, który określa, jak programista powinien podchodzić do organizacji kodu i rozwiązywania problemów. Każdy paradygmat definiuje zestaw zasad, wzorców oraz praktyk, które pomagają tworzyć czytelne, efektywne i logiczne programy. Paradygmaty oferują różne sposoby myślenia i podejścia do tworzenia aplikacji, co pozwala programistom wybrać najodpowiedniejsze narzędzia do konkretnego problemu.
