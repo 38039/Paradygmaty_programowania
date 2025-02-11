@@ -86,6 +86,18 @@ https://www.youtube.com/watch?v=KNyG5AwlKGE
 
 Zrozumienie i zastosowanie różnych paradygmatów programowania jest kluczowe dla rozwoju jako programista! Dzięki różnorodności można podejść do problemów na kilka sposobów i wybrać rozwiązanie najlepiej dopasowane do danego przypadku.
 
+# Spis zagadnień obejmujących dany temat:
+## Programowanie niestrukturalne: ...
+## Instrukcje sterujące:
+- Operatory matematyczne
+- Operatory porównania
+- Instrukcje warunkowe
+- Operatory logiczne
+- Pętle
+## Kolekcje:
+- Lista
+- Krotka
+- Słownik
 
 # Autorska Dokumentacja:
 ## Importy które już są w kodzie:

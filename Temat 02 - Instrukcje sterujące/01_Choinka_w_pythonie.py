@@ -1,11 +1,5 @@
-# TEMAT   2:  INSTRUKCJE STERUJĄCE
-# ZADANIE 2:  CHOINKA W PYTHONIE
+# ZADANIE 1:  CHOINKA W PYTHONIE
 #
-# WYMAGANIA:
-# Maksymalna liczba plików: 1
-# Rodzaj pracy:  Praca indywidualna
-#
-# TREŚĆ:
 # Napisz program w Pythonie rysujący "choinkę"
 #
 # Czyli funkcja ma mieć 3 parametry - dwie liczby całkowite
@@ -21,10 +15,9 @@ h = 0
 while h < 7:
     x = int(input("Podaj liczbe: "))
     h = x
-    if x % 2 == 0:
-        tree = '*'
-    else:
-        tree = '#'
+
+    if x % 2 == 0 : tree = '*'
+    else          : tree = '#'
 
     space = x
     paint = 1
