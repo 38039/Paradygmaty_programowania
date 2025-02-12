@@ -1,18 +1,10 @@
-# TEMAT   2:  INSTRUKCJE STERUJĄCE
-# ZADANIE 3:  SZUKANIE 'A' INDEKSY
+# ZADANIE 3: SZUKANIE 'A' INDEKSY
 #
-# WYMAGANIA:
-# Maksymalna liczba plików: 1
-# Rodzaj pracy:  Praca indywidualna
-#
-# TREŚĆ:
-# Napisz program w Pythonie rysujący "choinkę"
-#
-# Napisz drugą wersję programu z zadania 2, która zamiast zliczać litery 'A' i 'a' wypisze ich położenia (indeksy).
+# Napisz drugą wersję programu z ZADANIA 2, która zamiast zliczać litery 'A' i 'a' wypisze ich położenia (indeksy).
 # Należy użyć pętli for BEZ range. Ponadto w programie nie może wystąpić żadne działanie arytmetyczne
 # (dodawanie, odejmowanie ...) - podpowiedź: enumerate
 
 text = input()
 
-for i, x in enumerate(text):
-    if x=='a' or x=='A': print(i)
+for i, elem in enumerate(text):
+    if elem == 'a' or elem == 'A': print(i)

@@ -1,11 +1,5 @@
-// TEMAT   1:  PROGRAMOWANIE NIESTRUKTURALNE
 // ZADANIE 1:  CHOINKA W C
 //
-// WYMAGANIA:
-// Maksymalna liczba plików: 1
-// Rodzaj pracy: Praca indywidualna
-//
-// TREŚĆ:
 // Napisz w języku C program rysujący "choinki"
 // Liczba poziomów powinna być pobierana z klawiatury.
 // Choinka o parzystej liczbie poziomów powinna zostać "wyrysowana" gwiazdkami, a o nieparzystej - hashami (#).

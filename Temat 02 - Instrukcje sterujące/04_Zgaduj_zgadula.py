@@ -1,11 +1,5 @@
-# TEMAT   2:  INSTRUKCJE STERUJĄCE
 # ZADANIE 4:  ZGADUJ ZGADULA
 #
-# WYMAGANIA:
-# Maksymalna liczba plików: 1
-# Rodzaj pracy:  Praca indywidualna
-#
-# TREŚĆ:
 # Napisz program, który wylosuje liczbę całkowitą z zakresu 1-10 a następnie pozwoli na zgadnięcie
 # tej liczby w 3 próbach. Program ma podawać po każdej nieudanej próbie, czy podana liczba jest większa
 # czy mniejsza od wylosowanej. Po osiągnięciu zadanej liczby nieudanych prób program ma wypisać komunikat
@@ -15,23 +9,19 @@
 # import random
 # print(random.randint(1, 10))
 
-import random
+from random import randint
 
-target = random.randint(1, 10)
+drawn_number = randint(1, 10)
 
-turn = 0
-while turn < 3:
+i = 0
+while i < 3:
+    i += 1
     guess = int(input())
 
-    if guess > target:
-        print("Wieksza")
-    elif guess < target:
-        print("Mniejsza")
+    if   guess < drawn_number: print("Higher")
+    elif guess > drawn_number: print("Lower")
     else:
-        print("Wygrales")
+        print("Correct")
         break
 
-    print()
-    turn += 1
-else:
-    print("Przegrales")
+else: print("GAME OVER")

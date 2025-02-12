@@ -1,0 +1,20 @@
+x = 10
+y = 0
+
+# OBSŁUGA WYJĄTKÓW
+# UMIESZCZAMY PODEJRZANY KOD W KLAUZULI TRY
+try:
+    print(x / y)
+# NASTĘPNIE PODAJEMY PODEJRZEWANY WYJĄTEK DO KLUZULI I WPROWADZAMY INSTRUKCJE
+except ZeroDivisionError:
+    print("Division by zero")
+# NIE MUSIMY PODAWAĆ KONKRETNEGO WYJĄTKU
+except:
+    print("Unexpected error")
+# WSZYSTKO W KLAUZULI FINALLY WYKONA SIĘ NIEZALEŻNIE OD PRZYPADKU
+finally:
+    print(x + y)
+
+# KOD WYKONUJE SIĘ DALEJ NIEZALEŻNIE OD WYKRYTEGO WYJĄTKU
+y = 1
+print(y)

@@ -1,11 +1,5 @@
-// TEMAT   1:  PROGRAMOWANIE NIESTRUKTURALNE
 // ZADANIE 2:  EFEKTY UBOCZNE (DODATKOWE)
 //
-// WYMAGANIA:
-// Maksymalna liczba plików: 1
-// Rodzaj pracy:  Praca indywidualna
-//
-// TREŚĆ:
 // Napisz w C funkcję wyliczającą sumę i iloczyn dwóch liczb całkowitych.
 // Przy czym suma ma być zwracana przez return a iloczyn przez adres (C).
 //
