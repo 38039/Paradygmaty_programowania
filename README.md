@@ -98,6 +98,9 @@ Zrozumienie i zastosowanie różnych paradygmatów programowania jest kluczowe d
 - Lista
 - Krotka
 - Słownik
+## Funkcje
+- Zbiory
+- 
 
 # Autorska Dokumentacja:
 ## Importy które już są w kodzie:
