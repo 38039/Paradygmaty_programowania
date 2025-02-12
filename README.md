@@ -100,7 +100,6 @@ Zrozumienie i zastosowanie różnych paradygmatów programowania jest kluczowe d
 - Słownik
 ## Funkcje
 - Zbiory
-- 
 
 # Autorska Dokumentacja:
 ## Importy które już są w kodzie:
@@ -260,3 +259,199 @@ if m_a == None : return None
 return f(m_a)
 Zapobiega niepowodzeniu programu przez obsługe None
 ```
+
+# PARADYGMATY PROGRAMOWANIA 2024/25 - EGZAMIN
+
+## 1. Czym jest Programowanie Logiczne?
+Programowanie logiczne to paradygmat programowania, w którym program jest definiowany jako zbiór faktów i reguł, a wykonanie polega na zadawaniu zapytań i rozwiązywaniu ich na podstawie logiki formalnej. Główną ideą jest deklaratywne określenie co program ma zrobić, a nie jak ma to zrobić, co odróżnia je od tradycyjnego programowania imperatywnego.
+## Cechy kluczowe:
+- Opiera się na logice formalnej
+- Używa reguł i faktów
+- Silnik wnioskowania
+- Brak jawnego sterowania przepływem programu
+
+Najpopularniejszym językiem wykorzystującym podejście logiczne jest **Prolog**.
+```
+rodzic(jan, piotr).
+rodzic(piotr, adam).
+
+dziadek(X, Y) :- rodzic(X, Z), rodzic(Z, Y).
+
+?- dziadek(jan, adam).
+```
+
+---
+
+## 2. Czym są i jakie są różnice między Paradygmatami Imperatywnymi i Deklaratywnymi?
+Paradygmaty imperatywne i deklaratywne to dwa główne sposoby podejścia do programowania. Różnią się one przede wszystkim tym, jak definiujemy i kontrolujemy przepływ programu.
+
+## Paradygmat imperatywny
+- Polega na opisywaniu kroków, jakie należy wykonać, aby osiągnąć określony rezultat.
+- Programista określa jak program ma działać, definiując instrukcje sterujące przepływem wykonania
+- Charakterystyczne dla języków programowania, takich jak; C, Java, Python
+
+**Przykład imperatywny** (sumowanie liczb)
+```py
+numbers = [1, 2, 3, 4, 5]
+sum = 0
+for num in numbers:
+    sum += num
+```
+
+## Paradygmat deklaratywny
+- Skupia się na opisie rezultatu, a nie na szczegółowych krokach wykonania.
+- Programista określa co ma być osiągnięte, a sposób wykonania jest pozostawiony językowi lub silnikowi wykonawczemu.
+- Typowe dla języków takich jak; HTML, CSS, SQL, Prolog, Haskell
+
+**Przykład deklaratywny** (sumowanie liczb za pomocą funkcji wbudowanej)
+```py
+numbers = [1, 2, 3, 4, 5]
+sum = sum(numbers)
+```
+
+---
+
+## 3. Czym jest funkcja ENUMERATE w Pythonie?
+Polecenie enumerate(list) z listy elementów tworzy pary; (numer_elementu, element). Służy do numerowania elementów w iterowalnym obiekcie, takim jak lista, krotka czy ciąg znaków. Zwraca ona obiekt typu enumarate, który można przerzutować na listę krotek, gdzie każda krotka zawiera indeks i odpowiadający mu element.
+```py
+# SKŁADNIA
+enumerate(iterable, start=0)
+
+# iterable  - obiekt iterowalny (który chcemy ponumerować
+# start     - początkowa wartość indeksu (opcjonalnie)
+```
+Przykład użycia enumarate
+```py
+fruits = ["jabłko", "banan", "wiśnia"]
+
+# WYPISYWANIE ELEMENTÓW I INDEKSÓW LISTY NA PODSTAWIE PĘTLI FOR
+for index, fruit in enumerate(fruits):
+    print(index, fruit)
+
+# TWORZENIE LISTY Z INDEKSAMI
+lista_z_indeksami = list(enumerate(fruits))
+
+# OUTPUT
+# 0 jabłko
+# 1 banan
+# 2 wiśnia
+```
+---
+## 4. Czym jest SŁOWNIK w Pythonie?
+Słownik to kolekcja elementów dostępnych przez klucz. Tworzony jako zbiór par klucz:wartość, przy czym klucz musi być unikalny i niezmienialny. Jest przydatny gdy trzeba szybko wyszukać wartości na podstawie unikalnych kluczy.
+```py
+# SKŁADNIA
+slownik = {} # Pusty słownik
+
+# Słownik z danymi
+slownik = {
+    "imie": "Jan",
+    "wiek": 25,
+    "miasto": "Warszawa"
+}
+```
+Przykład dostępu do słownika
+```py
+# ZA POMOCĄ INDEKSU
+print(slownik["imie"])
+
+# ZA POMOCĄ METODY
+print(slownik.get("imie", "Brak danych"))
+```
+Operacje na słowniku
+```py
+# DODAWANIE NOWEGO KLUCZA / WARTOŚCI
+slownik["nazwisko"] = "Kowalski"
+
+# MODYFIKACJA ISTNIEJĄCEJ WARTOŚCI DANEGO KLUCZA
+slownik["wiek"] = 26
+
+# USUWANIE ELEMENTU
+del slownik["miasto"]  # ZA POMOCĄ DYREKTYWY
+slownik.pop("wiek")    # ZA POMOCĄ METODY
+
+# POBIERANIE LISTY KLUCZY
+klucze = slownik.keys()
+
+# POBIERANIE LISTY WARTOŚCI
+wartosci = slownik.values()
+
+# POBIERANIE LISTY PAR (KLUCZ-WARTOŚĆ)
+pary = slownik.items()
+```
+---
+## 5. Czym są METODY STATYCZNE (I KLASOWE) w Pythonie?
+W Pythonie istnieją trzy główne rodzaje metod w klasach:
+1. **Metody instancyjne** – operują na konkretnej instancji klasy i mają dostęp do jej atrybutów (używają self).
+2. **Metody klasowe** (@classmethod) – odpowiada mniej więcej metodie statycznej z C++. Operują na samej klasie, a nie na instancji, i mają dostęp do atrybutów klasy poprzez cls. 
+3. **Metody statyczne** (@staticmethod) – Nie operują ani na instancji, ani na klasie. Są zwykłymi funkcjami umieszczonymi w klasie dla lepszej organizacji kodu. Stosowana jest jako odpowiednik przeciążonego konstruktora. Zamiast instancji klasy otrzymuje klasę jako pierwszy parametr.
+
+Metody statyczne w Pythonie to metody definiowane w klasach, które nie operują na obiekcie ani na samej klasie. Nie mają dostępu do atrybutów instancji (self) ani do atrybutów klasy (cls). Są one przydatne do grupowania powiązanych funkcji w obrębie klasy, ale bez konieczności tworzenia obiektu.
+
+## METODA STATYCZNA
+Składnia metody statycznej
+```py
+class MathOperations:
+    @staticmethod
+    def add(a, b):
+        return a + b
+```
+Przykład użycia metody statycznej
+```py
+# Wywołanie metody bez tworzenia instancji
+print(MathOperations.add(3, 5))
+```
+
+## METODA KLASOWA
+Przykład metody klasowej
+```py
+class Example:
+    class_variable = "Hello"
+
+    @classmethod
+    def get_class_variable(cls):
+        return cls.class_variable
+```
+Przykład użycia metody klasowej
+```py
+# Można wywołać metodę na klasie
+print(Example.get_class_variable())
+
+# i instancji
+obj = Example()
+print(obj.get_class_variable())
+```
+---
+
+# 6. Czym jest REKURECJA OGONOWA i jak działa w Pythonie?
+**Rekurencja ogonowa** to szczególny rodzaj rekurencji, w której wywołanie rekurencyjne jest ostatnią operacją wykonywaną w danej funkcji przed jej zakończeniem. Oznacza to, że nie trzeba przechowywać żadnych dodatkowych informacji na stosie wywołań, co teoretycznie pozwala kompilatorowi lub interpreterowi na optymalizację i zamianę rekurencji na pętlę.
+
+Jednak **Python nie wspiera optymalizacji rekurencji ogonowej**, ponieważ stos wywołań w Pythonie ma ograniczoną głębokość i interpreter nie zamienia wywołań rekurencyjnych na iteracje. Dlatego w praktyce głęboka rekurencja w Pythonie może prowadzić do błędu RecursionError. Lepszym rozwiązaniem jest użycie głębokiej pętli.
+
+## Zwykła rekurencja
+```py
+def silnia(n):
+    if n == 0: return 1
+    return n * silnia(n - 1)
+```
+Każda funkcja rekurencyjna musi czekać na wynik poprzedniej, co zwiększa głębokość stosu.
+
+## Rekurencja ogonowa
+```py
+def silnia_ogonowa(n, wynik=1):
+    if n == 0: return wynik
+    return silnia_ogonowa(n - 1, n * wynik)
+```
+Zmienna wynik przechowuje / nadpisuje już aktualny wynik, więc nie trzeba przechowywać poprzednich stanów na stosie.
+
+---
+
+## 7. Czym jest CZĘŚCIOWA APLIKACJA i jej wynik będzie wynosić?
+
+---
+
+## 8. Programowanie funkcyjne/łączenie funkcji
+
+---
+
+## 9. Funkcje wyższego rzędu i 3 przykłady
