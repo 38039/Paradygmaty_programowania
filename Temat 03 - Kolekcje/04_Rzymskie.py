@@ -1,11 +1,5 @@
-# TEMAT   3:  KOLEKCJE
 # ZADANIE 4:  CYFRY RZYMSKIE
 #
-# WYMAGANIA:
-# Maksymalna liczba plików: 1
-# Rodzaj pracy:  Praca indywidualna
-#
-# TREŚĆ:
 # Napisz program, który zamieni napis zawierający liczbę rzymską na liczbę całkowitą wg algorytmu:
 #
 # W pętli, używając indeksu, weź dwie kolejne litery napisu (wycięciem - ang. slicing,
@@ -27,6 +21,7 @@ dictionary = {
     "D" : 500  ,
     "M" : 1000
 }
+
 input  = input().upper()
 output = 0
 
