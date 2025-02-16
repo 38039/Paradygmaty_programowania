@@ -446,12 +446,41 @@ Zmienna wynik przechowuje / nadpisuje już aktualny wynik, więc nie trzeba prze
 
 ---
 
-## 7. Czym jest CZĘŚCIOWA APLIKACJA i jej wynik będzie wynosić?
+## 7. Funkcje wyższego rzędu i 3 przykłady
+Funkcje wyższego rzędu to funkcje, które spełniają co najmniej jedno z poniższych kryteriów:
+- Przyjmują inne funkcje jako argumenty
+- Zwracają funkcje jako wynik
+Dzięki temu kod staje się zwięzły i modularny
 
+## Przykłady funkcji wyższego rzędu:
+- map()
+```py
+wynik = list(map(lambda i: i ** 2, [1, 2, 3, 4, 5]))
+```
+- filter()
+```py
+parzyste = list(filter(lambda i: i % 2 == 0, [1, 2, 3, 4, 5, 6]))
+```
+- sorted()
+```py
+posortowane = sorted([5, 2, 9, 1, 7], key=len)
+```
 ---
 
-## 8. Programowanie funkcyjne/łączenie funkcji
+## 8. Czym jest CZĘŚCIOWA APLIKACJA i jej wynik będzie wynosić?
+W Pythonie częściowa aplikacja (partial application) polega na "zamrożeniu" niektórych argumentów funkcji i utworzeniu nowej funkcji, która ma już te argumenty ustawione. Do tego celu używa się modułu functools i funkcji partial. Wynik częściowej aplikacji to nowa funkcja, która wymaga mniej argumentów niż oryginalna, ponieważ część z nich została już przypisana.
+```py
+from functools import partial
 
+def mnozenie(a, b): return a * b
+podwojenie = partial(mnozenie, 2)
+
+print(podwojenie(5))
+print(podwojenie(7))
+```
 ---
 
-## 9. Funkcje wyższego rzędu i 3 przykłady
+## 9. Programowanie funkcyjne/łączenie funkcji
+Łączenie funkcji w programowaniu funkcyjnym to proces tworzenia nowych funkcji poprzez kombinację innych funkcji. Oznacza to, że wynik jednej funkcji jest przekazywany jako argument do kolejnej.
+
+f(arg1, arg) <=> ((curry (f)) ( arg1) ) (arg2) - parametrem funkcji curry jest funkcja dwuargumentowa f, a rezultatem funkcja jednoargumentowa zwracająca funkcję jednoargumentową.
